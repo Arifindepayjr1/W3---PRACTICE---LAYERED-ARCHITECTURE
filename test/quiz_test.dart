@@ -1,17 +1,21 @@
 import 'package:test/test.dart';
 import "../lib/domain/quiz.dart";
+import "package:uuid/uuid.dart";
+var uuid = new Uuid();
 
 List<Question> questions = [
     Question(
         title: "Capital of France?",
         choices: ["Paris", "London", "Rome"],
         goodChoice: "Paris", 
-        score: 10),
+        score: 10,
+        id: uuid.v4()),
     Question(
         title: "2 + 2 = ?", 
         choices: ["2", "4", "5"], 
         goodChoice: "4",
-        score: 50),
+        score: 50,
+        id: uuid.v4()),
 ];
 
 

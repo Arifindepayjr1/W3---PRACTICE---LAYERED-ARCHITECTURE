@@ -1,6 +1,8 @@
 import 'dart:io';
-
+import "package:uuid/uuid.dart";
 import '../domain/quiz.dart';
+
+var uuid = new Uuid();
 
 class QuizConsole {
   Quiz quiz; 
@@ -40,7 +42,7 @@ class QuizConsole {
 
         int score = quiz.getScoreInPercentage();
         int totalPoint = quiz.getTotalPoint;
-        Player player = new Player(playerName: this.playerName , playerPoint: totalPoint);
+        Player player = new Player(id: uuid.v4(), playerName:  this.playerName , playerPoint: totalPoint);
         quiz.addPlayer(player);
 
         print('${player.playerName} Yours score: $score % correct');
